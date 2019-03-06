@@ -17,7 +17,7 @@ class AuthPresenter(private val view: AuthView, private val service: AuthService
         }
         val loginSucceeded = service.auth(username, password)
         if (loginSucceeded) {
-            view.startMainActivity()
+            view.startAddQuestionActivity()
             return
         }
         view.showLoginIncorrectError(R.string.auth_failed)

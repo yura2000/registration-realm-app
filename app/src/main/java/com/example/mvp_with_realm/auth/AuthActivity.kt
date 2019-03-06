@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.mvp_with_realm.MainActivity
 import com.example.mvp_with_realm.R
+import com.example.mvp_with_realm.new_question.AddQuestionActivity
+import com.example.mvp_with_realm.new_question.Question
 import com.example.mvp_with_realm.registration.RegisterActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -31,6 +33,11 @@ class AuthActivity : AppCompatActivity(), AuthView {
 
     override val name: String
         get() = username_et.text.toString()
+
+    override fun startAddQuestionActivity() {
+        val intent = Intent(this, AddQuestionActivity::class.java)
+        startActivity(intent)
+    }
 
     override val password: String
         get() = password_et.text.toString()

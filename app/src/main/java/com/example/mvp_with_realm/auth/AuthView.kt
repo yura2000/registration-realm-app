@@ -13,5 +13,7 @@ interface AuthView {
 
     fun startMainActivity()
 
+    fun startAddQuestionActivity()
+
     fun showLoginIncorrectError(resId: Int)
 }

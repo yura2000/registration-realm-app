@@ -2,18 +2,19 @@ package com.example.mvp_with_realm.registration
 
 import com.example.mvp_with_realm.R
 import io.realm.Realm
+import io.realm.RealmConfiguration
 
 class RegisterPresenter(private val view: RegisterView, private val service: RegisterService) {
 
     fun onRegisterClicked() {
         val username = view.name
         if (username.isEmpty()) {
-            view.showNameError(R.string.username_error)
+            view.showNameError(com.example.mvp_with_realm.R.string.username_error)
             return
         }
         val password = view.password
         if (password.isEmpty()) {
-            view.showPasswordError(R.string.password_error)
+            view.showPasswordError(com.example.mvp_with_realm.R.string.password_error)
             return
         }
         val realm = Realm.getDefaultInstance()
@@ -29,7 +30,7 @@ class RegisterPresenter(private val view: RegisterView, private val service: Reg
             view.startAuthActivity()
             return
         } else {
-            view.showUserWithThisUsernameAlreadyExists(R.string.usernameExists)
+            view.showUserWithThisUsernameAlreadyExists(com.example.mvp_with_realm.R.string.usernameExists)
             return
         }
     }

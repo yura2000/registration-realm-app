@@ -17,8 +17,6 @@ import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity(), RegisterView {
 
-    private var usernameView: EditText? = null
-    private var passwordView: EditText? = null
     private var presenter: RegisterPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
