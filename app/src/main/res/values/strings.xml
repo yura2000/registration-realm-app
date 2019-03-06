@@ -10,4 +10,5 @@
     <string name="success_message">You\'ve Successfully Logged In!!</string>
     <string name="main">Main</string>
     <string name="register">Register</string>
+    <string name="usernameExists">A user with this username already exists!</string>
 </resources>

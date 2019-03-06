@@ -11,4 +11,5 @@ interface RegisterView {
 
     fun startAuthActivity()
 
+    fun showUserWithThisUsernameAlreadyExists(resId: Int)
 }

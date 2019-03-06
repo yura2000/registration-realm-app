@@ -37,5 +37,5 @@ dependencies {
 
     //recycleview
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-    kapt "com.android.databinding:compiler:3.0.1"
+    kapt "com.android.databinding:compiler:3.1.4"
 }

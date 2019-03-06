@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import com.example.mvp_with_realm.MainActivity
 import com.example.mvp_with_realm.R
 import com.example.mvp_with_realm.auth.AuthActivity
@@ -48,6 +49,11 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
     override fun showPasswordError(resId: Int) {
         password_et.error = getString(resId)
+    }
+
+
+    override fun showUserWithThisUsernameAlreadyExists(resId: Int) {
+        Toast.makeText(this, getString(resId), Toast.LENGTH_SHORT).show()
     }
 
     override fun startAuthActivity() {

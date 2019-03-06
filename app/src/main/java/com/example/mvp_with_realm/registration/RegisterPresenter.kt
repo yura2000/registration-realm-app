@@ -18,13 +18,19 @@ class RegisterPresenter(private val view: RegisterView, private val service: Reg
         }
         val realm = Realm.getDefaultInstance()
 
-        realm.executeTransaction { realm ->
-            val dataObject = realm.createObject(Person::class.java, 2)
-            dataObject!!.username = username
-            dataObject!!.password = password
-        }
+        val loginSucceeded = service.checkRegisteredPerson(username)
+        if (!loginSucceeded) {
+            realm.executeTransaction { realm ->
+                val dataObject = realm.createObject(Person::class.java, 2)
+                dataObject!!.username = username
+                dataObject!!.password = password
+            }
 
-        view.startAuthActivity()
-        return
+            view.startAuthActivity()
+            return
+        } else {
+            view.showUserWithThisUsernameAlreadyExists(R.string.usernameExists)
+            return
+        }
     }
 }
