@@ -10,6 +10,6 @@ class RegisterService {
             realm.where(com.example.mvp_with_realm.registration.Person::class.java).equalTo("username", username)
                 .findFirst()
 
-        return persons!!.username == username
+        return persons?.username == username
     }
 }
