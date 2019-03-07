@@ -1,7 +1,8 @@
 package com.example.mvp_with_realm.new_question
 
 import com.example.mvp_with_realm.R
-import com.example.mvp_with_realm.registration.Person
+import com.example.mvp_with_realm.realm_classes.Answer
+import com.example.mvp_with_realm.realm_classes.Question
 import io.realm.Realm
 
 class AddQuestionPresenter(private val view: AddQuestionView, private val service: AddQuestionService) {
@@ -38,10 +39,14 @@ class AddQuestionPresenter(private val view: AddQuestionView, private val servic
         }
 
         val realm = Realm.getDefaultInstance()
-        val answer1_obj: Answer = Answer(1, answer1)
-        val answer2_obj: Answer = Answer(2, answer2)
-        val answer3_obj: Answer = Answer(3, answer3)
-        val answer4_obj: Answer = Answer(4, answer4)
+        val answer1_obj: Answer =
+            Answer(1, answer1)
+        val answer2_obj: Answer =
+            Answer(2, answer2)
+        val answer3_obj: Answer =
+            Answer(3, answer3)
+        val answer4_obj: Answer =
+            Answer(4, answer4)
 
         realm.executeTransaction { realm ->
             val dataObject = realm.createObject(Question::class.java, 4)

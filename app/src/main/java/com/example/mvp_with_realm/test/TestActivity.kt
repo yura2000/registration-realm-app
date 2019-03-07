@@ -3,10 +3,9 @@ package com.example.mvp_with_realm.test
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mvp_with_realm.R
-import com.example.mvp_with_realm.new_question.Question
+import com.example.mvp_with_realm.realm_classes.Question
 import io.realm.Realm
 import io.realm.RealmConfiguration
-import kotlinx.android.synthetic.main.activity_add_question.*
 import kotlinx.android.synthetic.main.activity_test.*
 
 class TestActivity : AppCompatActivity() {
