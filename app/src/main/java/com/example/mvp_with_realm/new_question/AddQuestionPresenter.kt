@@ -39,22 +39,22 @@ class AddQuestionPresenter(private val view: AddQuestionView, private val servic
         }
 
         val realm = Realm.getDefaultInstance()
-        val answer1_obj: Answer =
+        val answer1Obj =
             Answer(1, answer1)
-        val answer2_obj: Answer =
+        val answer2Obj =
             Answer(2, answer2)
-        val answer3_obj: Answer =
+        val answer3Obj =
             Answer(3, answer3)
-        val answer4_obj: Answer =
+        val answer4Obj =
             Answer(4, answer4)
 
         realm.executeTransaction { realm ->
             val dataObject = realm.createObject(Question::class.java, 4)
             dataObject.text = question
-            dataObject.answers.add(answer1_obj)
-            dataObject.answers.add(answer2_obj)
-            dataObject.answers.add(answer3_obj)
-            dataObject.answers.add(answer4_obj)
+            dataObject.answers.add(answer1Obj)
+            dataObject.answers.add(answer2Obj)
+            dataObject.answers.add(answer3Obj)
+            dataObject.answers.add(answer4Obj)
         }
 
     }

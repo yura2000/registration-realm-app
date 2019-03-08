@@ -7,4 +7,10 @@
         android:layout_height="match_parent"
         tools:context=".topics_menu.TopicsActivity">
 
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="688dp" android:id="@+id/topics_recycler_view"/>
 </android.support.constraint.ConstraintLayout>

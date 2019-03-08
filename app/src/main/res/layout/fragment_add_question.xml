@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".new_question.fragments.AddQuestionFragment">
+
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+        <EditText
+                android:layout_width="331dp"
+                android:layout_height="138dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/question_et"
+                android:hint="Enter question"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+        <EditText
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/answer1_et"
+                android:hint="Enter first answer"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="40dp" app:layout_constraintTop_toBottomOf="@+id/spinner"/>
+        <EditText
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/answer2_et"
+                android:hint="Enter second answer"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/answer1_et"/>
+        <EditText
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/answer3_et"
+                android:hint="Enter third answer"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/answer2_et"/>
+        <EditText
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/answer4_et"
+                android:hint="Enter forth answer"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/answer3_et"/>
+        <Button
+                android:text="Add"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/add_btn"
+                android:onClick="onAddClicked"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:layout_marginTop="50dp"
+                app:layout_constraintTop_toBottomOf="@+id/answer4_et"/>
+        <Button
+                android:text="Go to questions"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/go_to_questions_btn"
+                android:onClick="onGoToQuestionClicked"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/add_btn"
+        />
+        <Button
+                android:text="Add topic"
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/go_to_questions_btn2"
+                android:onClick="onAddTopicClicked"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/go_to_questions_btn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0" android:layout_marginStart="8dp"
+                app:layout_constraintStart_toStartOf="parent"/>
+        <Spinner
+                android:layout_width="331dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/question_et" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

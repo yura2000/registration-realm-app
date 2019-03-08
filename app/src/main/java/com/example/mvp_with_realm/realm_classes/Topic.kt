@@ -8,7 +8,8 @@ import io.realm.annotations.Required
 open class Topic(
     @PrimaryKey var id: Long = 0,
     @Required var name: String = "",
-    @Required var imgName: String = "",
+    @Required var numberOfQuestions: Int = 0,
+    @Required var imgUrl: String = "",
     @Required var questions: RealmList<Question> = RealmList()
 ) : RealmObject() {
 

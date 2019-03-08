@@ -8,14 +8,9 @@ class AuthService {
     fun auth(username: String, password: String): Boolean {
 
         val config: RealmConfiguration = RealmConfiguration.Builder()
-            .schemaVersion(2) // Must be bumped when the schema changes
-            .migration(MyMigration()) // Migration to run instead of throwing an exception
+            .schemaVersion(2)
+            .migration(MyMigration())
             .build()
-
-//        val config = RealmConfiguration.Builder()
-//            .deleteRealmIfMigrationNeeded()
-//            .build()
-//        Realm.setDefaultConfiguration(config)
 
         val realm = Realm.getDefaultInstance()
 

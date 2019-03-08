@@ -3,19 +3,22 @@ package com.example.mvp_with_realm.new_question
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.view.accessibility.AccessibilityManagerCompat
+import android.support.v4.app.Fragment
 import android.view.View
 import com.example.mvp_with_realm.R
-import com.example.mvp_with_realm.registration.RegisterPresenter
-import com.example.mvp_with_realm.registration.RegisterService
+import com.example.mvp_with_realm.new_question.fragments.AddQuestionFragment
+import com.example.mvp_with_realm.new_question.fragments.AddTopicFragment
 import com.example.mvp_with_realm.test.TestActivity
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import kotlinx.android.synthetic.main.activity_add_question.*
+import kotlinx.android.synthetic.main.fragment_add_question.*
 
 class AddQuestionActivity : AppCompatActivity(), AddQuestionView {
 
     private var presenter: AddQuestionPresenter? = null
+    private val frag2:Fragment = AddTopicFragment()
+    private val frag1:Fragment = AddQuestionFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +29,15 @@ class AddQuestionActivity : AppCompatActivity(), AddQuestionView {
         Realm.setDefaultConfiguration(config)
 
         presenter = AddQuestionPresenter(this, AddQuestionService())
+
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_container, frag1)
+            .addToBackStack(null)
+            .commit()
     }
+
+
 
     override val question: String
         get() = question_et.text.toString()
@@ -45,6 +56,15 @@ class AddQuestionActivity : AppCompatActivity(), AddQuestionView {
 
     fun onGoToQuestionClicked(view: View) {
         presenter!!.onGoToQuestionClicked()
+    }
+
+    fun onAddTopicClicked(view: View) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, frag2)
+            .addToBackStack(null)
+            .commit()
+        TODO("Зробити кліклісенери")
     }
 
     override fun startTestActivity() {
